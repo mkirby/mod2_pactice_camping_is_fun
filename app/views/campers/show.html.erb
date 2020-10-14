@@ -1,0 +1,17 @@
+<h1>Access Camp</h1>
+<p><%= link_to "View Campers", campers_path %> |
+<%= link_to "View Activities", activities_path%> |
+<%= link_to "Activity Sign Up Form", new_signup_path %></p>
+
+<h2><%= @camper.name %>'s Profile</h2>
+<p>Age: <%= @camper.age %></p>
+<p>Current Activites:</p>
+<ul>
+    <% @camper.signups.each do |signup|%>
+    <li><%= link_to signup.activity.name, activity_path(signup.activity) %></li>
+    <ul>
+        <li>Time: <%= signup.display_time %></li>
+        <li>Difficulty: <%= signup.activity.difficulty %></li>
+    </ul>
+    <% end%>
+</ul>

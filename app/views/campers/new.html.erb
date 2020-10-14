@@ -2,9 +2,5 @@
 <p><%= link_to "View Campers", campers_path %> |
 <%= link_to "View Activities", activities_path%> |
 <%= link_to "Activity Sign Up Form", new_signup_path %></p>
-<h2>All The Activities</h2>
-<ul>
-  <% @activities.each do |activity| %>
-    <li><%= link_to activity.name, activity_path(activity) %></li>
-  <% end %>
-</ul>
+<h2>New Camper Registration</h2>
+<%= render "camper" %>

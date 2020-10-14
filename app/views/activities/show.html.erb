@@ -2,9 +2,12 @@
 <p><%= link_to "View Campers", campers_path %> |
 <%= link_to "View Activities", activities_path%> |
 <%= link_to "Activity Sign Up Form", new_signup_path %></p>
-<h2>All The Campers</h2>
+<h2><%= @activity.name %></h2>
+<p>Difficulty Rating: <%= @activity.difficulty %></p>
+
+<p>Enrolled Campers:</p>
 <ul>
-  <% @campers.each do |camper| %>
+    <% @activity.campers.each do |camper|%>
     <li><%= link_to camper.name, camper_path(camper) %></li>
-  <% end %>
+    <% end%>
 </ul>
